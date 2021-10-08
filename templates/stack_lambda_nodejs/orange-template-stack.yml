@@ -1,33 +1,14 @@
-name: Stack Node JS
-description: Stack Kotlin Micronaut by Orange Stack
+name: Lambda CDK NodeJs Typescript
+description: Lambda CDK NodeJs Typescript
 type: stack
 resources:
   - step: scaffold
     type: template
-    template: ori::template::132456-654654-654654-65464::asdaasd-654654-987987-987989 # SCAFFOLD NODEJS
-
-  - step: pipeline
-    type: formula
-    formula:
-      repo: https://github.com/orangestack-com/formulas-pipeline/
-      release: 0.0.5
-      command: os create pipeline
-
-  - step: pipeline
-    type: formula
-    formula:
-      repo: https://github.com/orangestack-com/formulas-pipeline/
-      release: 0.0.5
-      command: os create pipeline
-
-  - step: rds
-    type: template
-    template: ori::template::132456-654654-654654-65464::asdaasd-654654-987987-987987 # RDS
-    # https://github.com/fabianofernandeszup/template-rds
+    template: ori::template::4a1fb966-4795-4d24-aa37-1f1aad7bd2b1::f352eb94-48fd-4efa-8745-1fd619d5e050
 
   - step: s3bucket
     type: formula
     formula:
-      repo: https://github.com/orangestack-com/catalog-formulas/
-      release: 0.0.5
-      command: os catalog upload s3
+      repo: 'https://github.com/Orangestack-com/stacklifecycle-catalog-formulascloud-org'
+      release: 'rc-1.1.0'
+      command: 'template upload s3'

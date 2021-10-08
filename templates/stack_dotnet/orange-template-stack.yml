@@ -1,10 +1,10 @@
-name: Kotlin GRPC
-description: Template para projetos utilizarem Building Blocks Orange - Back-End Kotlin com gRPC
+name: Dotnet GRPC
+description: Stack Dotnet GRPC
 type: stack
 resources:
  - step: scaffold
     type: template
-    template: ori::template::4a1fb966-4795-4d24-aa37-1f1aad7bd2b1::d0606c91-6d39-41bb-b8ea-b1816542bf1f
+    template: ori::template::4a1fb966-4795-4d24-aa37-1f1aad7bd2b1::c3e5dba7-c242-460a-a8df-01e83054166a
 
   - step: s3bucket
     type: formula

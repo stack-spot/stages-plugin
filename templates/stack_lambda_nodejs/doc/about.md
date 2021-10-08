@@ -1,1 +1,1 @@
-# template-stack-kotlin-micronaut
+# Lambda CDK NodeJs Typescript
