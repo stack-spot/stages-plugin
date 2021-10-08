@@ -1,8 +1,8 @@
-name: Dotnet GRPC
-description: Stack Dotnet GRPC
+name: "Dotnet GRPC"
+description: "Stack Dotnet GRPC"
 type: stack
 resources:
- - step: scaffold
+  - step: scaffold
     type: template
     template: ori::template::4a1fb966-4795-4d24-aa37-1f1aad7bd2b1::c3e5dba7-c242-460a-a8df-01e83054166a
 
