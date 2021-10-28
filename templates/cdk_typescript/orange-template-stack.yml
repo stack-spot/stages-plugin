@@ -1,10 +1,10 @@
 name: "Typescript CDK application"
-description: Orangestack base CDK typescript application
+description: "Orangestack base CDK typescript application"
 type: stack
 resources:
   - step: scaffold
     type: template
-    template: ori::template::4a1fb966-4795-4d24-aa37-1f1aad7bd2b1::c3e5dba7-c242-460a-a8df-01e83054166a
+    template: ori::template::27237b7f-1075-40d4-9345-b7fb4bf33bd5::f81a5084-757e-443d-b47b-0dd341f1f29c
 
   - step: s3bucket
     type: formula
