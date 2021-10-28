@@ -1,5 +1,5 @@
-name: "Typescript CDK application"
-description: Orangestack base CDK typescript application
+name: "Dotnet gRPC"
+description: Stack Dotnet gRPC
 type: stack
 resources:
   - step: scaffold
