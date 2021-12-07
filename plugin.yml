@@ -1,0 +1,18 @@
+name: "stages-plugin"
+description: This plugin creates the stages folder with the environment properties file.
+type: env
+tags:
+  - environment
+  - stages
+inputs:
+  - label: "Stage name:"
+    type: text
+    name: "stage_name"
+    default: "sandbox"
+  - label: "Cloud account id:"
+    type: text
+    name: "cloud_account_id"
+  - label: "Cloud region:"
+    type: text
+    name: "cloud_region"
+    default: "global"

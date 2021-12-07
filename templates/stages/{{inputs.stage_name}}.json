@@ -1,0 +1,8 @@
+{
+    "cloud": {
+        "account": {
+            "id": "{{inputs.cloud_account_id}}",
+            "region": "{{inputs.cloud_region}}"
+        }
+    }
+}
