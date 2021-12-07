@@ -1,0 +1,31 @@
+name: Plugin Update
+'on':
+  push:
+    tags:
+      - '*'
+concurrency:
+  group: '${{ github.workflow }}'
+jobs:
+  update-plugin:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version:
+          - 3.9
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set tag
+        run: echo "RELEASE=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: 'Set up Python ${{ matrix.python-version }}'
+        uses: actions/setup-python@v2
+        with:
+          python-version: '${{ matrix.python-version }}'
+      - run: pip install requests pyyaml
+      - run: python ./.github/scripts/send_dispatch_event.py
+        env:
+          GITHUB_TOKEN: '${{ secrets.REPO_ACCESS_TOKEN }}'
+          TARGET_REPO: 'Orangestack-com/stacklifecycle-plugin-index'
+          RELEASE: '${{ env.RELEASE }}'
+          REPO: '${{ github.repository }}'
+          
