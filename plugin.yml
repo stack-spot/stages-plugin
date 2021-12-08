@@ -1,6 +1,8 @@
 name: "stages-plugin"
-description: This plugin creates the stages folder with the environment properties file.
-type: env
+description: "This plugin creates the stages folder with the environment properties file."
+types:
+  - app
+  - env
 tags:
   - environment
   - stages
