@@ -1,5 +1,5 @@
 import requests
-import json
+from pathlib import Path
 import os
 import yaml
 import requests
@@ -11,7 +11,18 @@ repo = os.environ.get("REPO")
 
 with open("./plugin.yml") as yml:
     plugin = yaml.load(yml, Loader=yaml.FullLoader)
-    
+
+    langs = []
+    for path in Path('./templates').iterdir():
+        if path.is_dir():
+            langs.append(path.name)
+
+    plugin["languages"] = langs
+
+    if "default" in langs:
+        langs.remove("default")
+    plugin["languages"] = langs
+
     headers = {
     "Accept": "application/vnd.github.v3+json",
     "Authorization": f"token {token}",
@@ -30,4 +41,4 @@ with open("./plugin.yml") as yml:
     resp = requests.post(uri, headers=headers, json=body)
 
     if resp.status_code != 204:
-        raise Exception(f'error calling {uri} - status code: {resp.status_code}')
+        raise Exception(f"error calling {uri} \n status: {resp.status_code} \n text: {resp.text}")
